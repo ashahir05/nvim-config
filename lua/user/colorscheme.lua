@@ -1,5 +1,4 @@
-vim.opt.background = "dark" 
-local colorscheme = "zenwritten"
+local colorscheme = "moonfly"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
