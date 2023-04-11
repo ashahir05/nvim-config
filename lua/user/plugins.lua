@@ -9,6 +9,7 @@ local M = {
   { "akinsho/bufferline.nvim" },
   { "moll/vim-bbye" },
   { "nvim-lualine/lualine.nvim" },
+  { "arkav/lualine-lsp-progress" },
   { "akinsho/toggleterm.nvim" },
   { "ahmedkhalf/project.nvim" },
   { "lewis6991/impatient.nvim" },
@@ -59,7 +60,6 @@ local M = {
     "phaazon/hop.nvim",
     branch = "v2",
   },
-  { "arkav/lualine-lsp-progress" },
 }
 
 return M;

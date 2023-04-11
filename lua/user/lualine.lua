@@ -12,14 +12,11 @@ local diagnostics = {
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
-	colored = false,
-	update_in_insert = false,
 	always_visible = true,
 }
 
 local diff = {
 	"diff",
-	colored = false,
 	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
         cond = hide_in_width
 }
@@ -36,11 +33,6 @@ local branch = {
 	icon = "",
 }
 
-local location = {
-	"location",
-	padding = 0,
-}
-
 local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
@@ -55,12 +47,12 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { "mode" },
+		lualine_a = { "mode" },
+		lualine_b = { branch, diagnostics },
 		lualine_c = { "lsp_progress" },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_y = { location },
+		lualine_y = { "location" },
 		lualine_z = { "progress" },
 	},
 	inactive_sections = {

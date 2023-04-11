@@ -37,7 +37,7 @@ local setup = {
   },
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-    separator = "➜", -- symbol used between a key and it's label
+    separator = "→ ", -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
@@ -235,8 +235,8 @@ local global_mappings = {
   ["H"] = { ":bnext<CR>", "Switch to next buffer" },
   ["L"] = { ":bprevious<CR>", "Switch to previous buffer" },
   
-  ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", "Move line below" },
-  ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", "Move line above" },
+  ["<A-j>"] = { ":m .+1<CR>", "Move line below" },
+  ["<A-k>"] = { ":m .-2<CR>", "Move line above" },
   
   ["<A-h>"] = {
     name = "Hop",
@@ -310,9 +310,3 @@ which_key.register(global_insert_mappings, global_insert_opts)
 which_key.register(global_visual_mappings, global_visual_opts)
 which_key.register(global_visual_block_mappings, global_visual_block_opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)

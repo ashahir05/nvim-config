@@ -16,6 +16,11 @@ nvim_tree.setup {
     update_cwd = true,
   },
   renderer = {
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+    },
+    highlight_opened_files = "all",
     root_folder_modifier = ":t",
     icons = {
       glyphs = {
