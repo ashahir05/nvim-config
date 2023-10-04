@@ -222,6 +222,12 @@ local mappings = {
 }
 
 local global_mappings = {
+  ["j"] = { "gj", "Move down visually"},
+  ["k"] = { "gk", "Move up visually"},
+  ["<Down>"] = { "gj", "Move down visually"},
+  ["<Up>"] = { "gk", "Move up visually"},
+  [ "H" ] = { "^", "Go to start of line" },
+  [ "L" ] = { "$", "Go to end of line" },
   ["<C-h>"] = { "<C-w>h", "Move to left window" },
   ["<C-l>"] = { "<C-w>l", "Move to right window" },
   ["<C-k>"] = { "<C-w>k", "Move to top window" },
@@ -232,13 +238,13 @@ local global_mappings = {
   ["<A-K>"] = { ":resize -2<CR>", "Decrease size to the top" },
   ["<A-J>"] = { ":resize +2<CR>", "Increase size to the bottom" },
   
-  ["H"] = { ":bnext<CR>", "Switch to next buffer" },
-  ["L"] = { ":bprevious<CR>", "Switch to previous buffer" },
+  ["<TAB>"] = { ":bnext<CR>", "Switch to next buffer" },
+  ["<S-TAB>"] = { ":bprevious<CR>", "Switch to previous buffer" },
   
   ["<A-j>"] = { ":m .+1<CR>", "Move line below" },
   ["<A-k>"] = { ":m .-2<CR>", "Move line above" },
   
-  ["<A-h>"] = {
+  ["<A-s>"] = {
     name = "Hop",
     c = { ":HopChar1<CR>", "Hop to a character" },
     C = { ":HopChar2<CR>", "Hop to a string of two characters" },
@@ -270,7 +276,7 @@ local global_mappings = {
 }
 
 local global_insert_mappings = {
-  ["<A-h>"] = {
+  ["<A-s>"] = {
     name = "Hop",
     c = { "<cmd>HopChar1<CR>", "Hop to a character" },
     C = { "<cmd>HopChar2<CR>", "Hop to a string of two characters" },

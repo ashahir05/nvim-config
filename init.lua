@@ -1,12 +1,8 @@
-config_dir = vim.fn.stdpath("config");
+require("util.globals");
+local readLuaModules = require("util.readLuaModules");
+local requireAll = require("util.requireAll");
 
-require("user.options");
-require("user.lazy");
-require("user.lsp");
+require("plugin_loader")
 
-for filename in io.popen('ls -pUqAL ' .. '"' .. config_dir .. '/lua/user"' ):lines() do
-   filename = filename:match"^(.*)%.lua$";
-   if (filename and filename ~= "options" and filename ~= "plugins" and filename ~= "lazy") then
-      require("user." .. filename);
-   end
-end
+local core = readLuaModules(LUA_DIR, "core");
+requireAll(core);
