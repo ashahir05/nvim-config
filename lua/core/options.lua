@@ -1,7 +1,9 @@
 local options = require("config.options")
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+  if vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "modifiable") then
+    vim.opt[k] = v
+  end
 end
 
 vim.opt.shortmess:append("c")                         -- don't give |ins-completion-menu| messages

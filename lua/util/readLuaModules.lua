@@ -1,6 +1,6 @@
 return function (luaDirectory, module)
   local modulePath = luaDirectory .. "/" .. module;
-  local children = io.popen("rg " .. modulePath .. " --files --type lua --max-depth=1"):lines()
+  local children = io.popen("find " .. modulePath .. " -maxdepth 1 -name '*.lua'"):lines()
   local luaModules = {}
   
   for i in children do

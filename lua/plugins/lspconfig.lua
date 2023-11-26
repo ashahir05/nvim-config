@@ -63,15 +63,5 @@ return {
     handlers.capabilities = cmp_nvim_lsp.default_capabilities(handlers.capabilities);
     
     handlers.setup();
-    
-    for _, lang in ipairs(readLuaModules(LUA_DIR, "plugins/lang")) do
-      local server = require(lang).lsp.server;
-      local opts = require(lang).lsp.config;
-      
-      opts.capabilities = handlers.capabilities;
-      opts.on_attach = handlers.on_attach;
-      
-      lspconfig[server].setup(opts);
-    end
   end
 }

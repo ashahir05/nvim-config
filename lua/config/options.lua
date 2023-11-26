@@ -37,4 +37,5 @@ return {
   whichwrap = "bs<>[]hl",                 -- which "horizontal" keys are allowed to travel to prev/next line
   fillchars = "eob: ",
   shortmess = "ilmnrx",
+  laststatus = 3
 }
